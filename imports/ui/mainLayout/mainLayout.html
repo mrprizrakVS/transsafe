@@ -1,0 +1,25 @@
+<template name="mainLayout">
+	<div class="main-wrapper">
+		<header class="main-header container">
+			<a href="/" class="main-logo">
+				<i class="fa fa-car" aria-hidden="true"></i>
+			</a>
+			<nav class="main-header-nav">
+				{{#if currentUser}}
+					<ul class="header-nav-list main-nav-list">
+						<li><a href="">СТО</a></li>
+						<li><a href="">Особистий кабінет</a></li>
+					</ul>
+				{{else}}
+				<ul class="header-sign-list">
+					<li><a href="">Реєстрація</a></li>
+					<li><a href="">Авторизація</a></li>
+				</ul>
+				{{/if}}
+			</nav>
+		</header>
+		<main class="main-container container">
+			{{> Template.dynamic template=view}}
+		</main>
+	</div>
+</template>

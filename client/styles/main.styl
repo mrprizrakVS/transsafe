@@ -1,0 +1,56 @@
+@import 'variables.styl'
+@import 'fonts.styl'
+
+body
+	background-color $gray
+	font-family 'RobotoCondensed-Regular'
+	font-size 100%
+
+.main-wrapper
+	width 80%
+	margin 0 auto
+	max-width 1080px
+
+.main-header
+	background-color $white
+	display flex
+	justify-content space-between
+	align-items center
+	border-bottom 10px solid $green
+
+.main-header-nav
+	flex 1
+	display flex
+	justify-content flex-end
+	align-items center
+	font-size: 90%
+	a
+		display inline-block
+		padding 11px 15px
+		text-decoration none
+		color $dark-grey
+		text-transform uppercase
+		background-color #f1f1f1
+		&:hover
+			color $green
+
+.main-nav-list
+	list-style none
+	display flex
+	flex 1
+	justify-content flex-end
+	li
+		margin-left 2%
+
+.container
+	padding 1.5% 3%
+
+.main-logo
+	color $green
+	font-size: 150%
+
+.header-sign-list
+	list-style none
+	display flex
+	li:last-child
+		border-left 1px solid #e0e2e4
