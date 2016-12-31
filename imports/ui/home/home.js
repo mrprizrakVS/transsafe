@@ -1,1 +1,1 @@
-import './home.html';
+import './homeLayout.html';

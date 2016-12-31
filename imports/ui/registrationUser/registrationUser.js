@@ -1,1 +1,1 @@
-import './registrationUser.html';
+import './registrationUserLayout.html';

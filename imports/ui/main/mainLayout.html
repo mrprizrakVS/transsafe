@@ -12,8 +12,16 @@
 					</ul>
 				{{else}}
 				<ul class="header-sign-list">
-					<li><a href="/registration/user">Реєстрація</a></li>
-					<li><a href="">Авторизація</a></li>
+					<li><a href="/auth">Авторизація</a></li>
+					<li>
+						<a href="/registration/user" class="ui dropdown">
+							<span>Реєстрація</span>
+							<div class="menu registration-types">
+							  <a class="item item-dropdown" href="/registration/user" data-value="user">Користувач</a>
+							  <a class="item item-dropdown" href="/registration/service" data-value="service">Сервіс</a>
+							</div>
+						</a>
+					</li>
 				</ul>
 				{{/if}}
 			</nav>

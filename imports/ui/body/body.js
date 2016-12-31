@@ -1,1 +1,1 @@
-import './body.html';
+import './bodyLayout.html';
