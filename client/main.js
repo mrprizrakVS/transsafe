@@ -7,3 +7,5 @@ import '../imports/ui/auth/auth.js';
 import '../imports/ui/registrationService/registrationService.js';
 
 import '../imports/api/users.js';
+
+import '../imports/config/hooks/accounts.js';
