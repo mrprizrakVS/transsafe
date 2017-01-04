@@ -41,16 +41,22 @@ Schema.User = new SimpleSchema({
 		optional: true,
 		label: 'Профіль'
 	},
-	emails: {
+	username: {
+		type: String,
+		label: "Логін"
+	},
+	email: {
 		type: String,
 		regEx: SimpleSchema.RegEx.Email,
 		label: "Email адрес",
+		optional: true,
 		autoform: {
 			placeholder: 'example@gmail.com'
 		}
 	},
 	createdAt: {
 		type: Date,
+		optional: true,
 		autoValue() {
 			return new Date();
 		},
@@ -58,13 +64,10 @@ Schema.User = new SimpleSchema({
 			type: 'hidden'
 		}
 	},
-	services: {
-		type: Object,
-		optional: true,
-		blackbox: true,
-		autoform: {
-			type: 'hidden'
-		}
+	password: {
+		type: String,
+		label: "Пароль",
+		optional: true
 	}
 	// In future add roles here...
 });
@@ -73,3 +76,4 @@ Meteor.users.attachSchema(Schema.User);
 
 
 export const Users = Meteor.users;
+export const UsersSchema = Schema.User;

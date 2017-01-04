@@ -1,5 +1,5 @@
 Accounts.emailTemplates.siteName = "Transsafe";
-Accounts.emailTemplates.from = "Transsafe ghost@nanocoding.com"
+Accounts.emailTemplates.from = "Transsafe <admin@transsafe.com>"
 
 Accounts.emailTemplates.verifyEmail = {
 	subject() {
