@@ -3,19 +3,30 @@
 		<h3 class="registration-title card-sect-title">Реєстрація користувача</h3>
 		<section class="card-inner-sect">
 			{{#autoForm buttonContent="Зберегти" collection="Users" id="insertUserForm" class="new-user-form"}}
-				<label class="control-label">{{afFieldLabelText name='username'}}</label>
-				{{> afFieldInput name='username'}}
-				<label class="control-label">{{afFieldLabelText name='password'}}</label>
-				{{> afFieldInput name='password'}}
-				<label class="control-label">Email</label>
-				{{> afFieldInput name='email'}}
-				<label class="control-label">{{afFieldLabelText name='profile.firstName'}}</label>
-				{{> afFieldInput name='profile.firstName'}}
-				<label class="control-label">{{afFieldLabelText name='profile.lastName'}}</label>
-				{{> afFieldInput name='profile.lastName'}}
-				<label class="control-label">{{afFieldLabelText name='profile.gender'}}</label>
-				{{> afQuickField name='profile.gender' options="allowed"}}
-				<button type="submit" class="btn btn-primary">Add user</button>
+				<div class="form-group">
+					<label class="control-label">{{afFieldLabelText name='profile.firstName'}}</label>
+					{{> afFieldInput name='profile.firstName'}}
+				</div>
+				<div class="form-group">
+					<label class="control-label">{{afFieldLabelText name='profile.lastName'}}</label>
+					{{> afFieldInput name='profile.lastName'}}
+				</div>
+				<div class="form-group">
+					<label class="control-label">{{afFieldLabelText name='username'}}</label>
+					{{> afFieldInput name='username'}}
+				</div>
+				<div class="form-group">
+					{{> afQuickField name='profile.gender' options="allowed"}}
+				</div>
+				<div class="form-group">
+					<label class="control-label">Email</label>
+					{{> afFieldInput name='email'}}
+				</div>
+				<div class="form-group">
+					<label class="control-label">{{afFieldLabelText name='password'}}</label>
+					{{> afFieldInput name='password'}}
+				</div>
+				<button type="submit" class="btn btn-primary">Зареєструватися</button>
 			{{/autoForm}}
 		</section>
 	</section>
