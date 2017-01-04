@@ -8,7 +8,15 @@
 				{{#if currentUser}}
 					<ul class="header-nav-list main-nav-list">
 						<li><a href="">СТО</a></li>
-						<li><a href="">Особистий кабінет</a></li>
+						<li>
+							<a href="" class="ui dropdown">
+								<span>Особистий кабінет</span>
+								<div class="menu registration-types">
+								  <a class="item item-dropdown" id="logout-btn">Вийти</a>
+								  <a class="item item-dropdown" href="/account/settings" data-value="service">Налаштування</a>
+								</div>
+							</a>
+						</li>
 					</ul>
 				{{else}}
 				<ul class="header-sign-list">
