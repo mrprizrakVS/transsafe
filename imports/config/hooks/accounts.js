@@ -7,13 +7,9 @@ import { Users } from '../../api/users.js';
 
 AutoForm.hooks({
   insertUserForm: {
-    onSubmit: function(doc) {
+    onSubmit(doc) {
         this.event.preventDefault();
         check(doc, Users.simpleSchema());
-
-        console.log('doc', doc);
-
-        // doc.email = doc.emails[0];
 
         Accounts.createUser(doc, (error) => {
             if(error) {
@@ -29,11 +25,15 @@ AutoForm.hooks({
             }
         });
     },
-    onSuccess:function(operation, result, template){
-    	debugger;
-    },
     onError: function(operation, error, template) {
         console.log('Error', error);
+    }
+  },
+  authForm: {
+    onSubmit(doc) {
+        this.event.preventDefault();
+
+        Meteor.loginWithPassword(doc.email, doc.password);
     }
   }
 });

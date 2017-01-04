@@ -43,7 +43,11 @@ Schema.User = new SimpleSchema({
   },
   username: {
     type: String,
-    label: "Логін"
+    label: "Логін",
+    optional: true,
+    autoform: {
+      placeholder: 'Login'
+    }
   },
   emails: {
     type: Array,
@@ -59,19 +63,13 @@ Schema.User = new SimpleSchema({
   "emails.$.verified": {
       type: Boolean,
   },
-  // Use this registered_emails field if you are using splendido:meteor-accounts-emails-field / splendido:meteor-accounts-meld
-  registered_emails: {
-      type: Array,
-      optional: true
-  },
-  'registered_emails.$': {
-      type: Object,
-      blackbox: true
-  },
   email: {
     type: String,
     optional: true,
-    regEx: SimpleSchema.RegEx.Email
+    regEx: SimpleSchema.RegEx.Email,
+    autoform: {
+      placeholder: 'example@gmail.com'
+    }
   },
   createdAt: {
     type: Date,
