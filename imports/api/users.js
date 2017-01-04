@@ -68,6 +68,14 @@ Schema.User = new SimpleSchema({
 		type: String,
 		label: "Пароль",
 		optional: true
+	},
+	services: {
+		type: Object,
+		optional: true,
+		blackbox: true,
+		autoform: {
+			type: 'hidden'
+		}
 	}
 	// In future add roles here...
 });
