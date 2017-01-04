@@ -11,7 +11,23 @@ AutoForm.hooks({
         this.event.preventDefault();
         check(doc, Users.simpleSchema());
 
-        Accounts.createUser(doc);
+        console.log('doc', doc);
+
+        // doc.email = doc.emails[0];
+
+        Accounts.createUser(doc, (error) => {
+            if(error) {
+                console.warn('Registration error', error);
+            } else {
+                Meteor.call('sendVerificationLink', (error, response) => {
+                    if(error) {
+                        console.warn('Verification problem!');
+                    } else {
+                        console.log('Welcome!', 'success');
+                    }
+                })
+            }
+        });
     },
     onSuccess:function(operation, result, template){
     	debugger;
