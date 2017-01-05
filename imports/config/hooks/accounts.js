@@ -21,7 +21,7 @@ AutoForm.hooks({
                     } else {
                         console.log('Welcome!', 'success');
                     }
-                })
+                });
             }
         });
     },
