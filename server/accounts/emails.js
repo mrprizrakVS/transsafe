@@ -6,10 +6,10 @@ Accounts.emailTemplates.verifyEmail = {
 		return "Transsafe Verify Your Email address";
 	},
 	text(user, url) {
-		let emailAddress = user.emails[0],
+		let emailAddress = user.emails[0].address,
 				urlWithoutHash = url.replace('#/', ''),
-				supportEmail = "support@godun.com",
-				emailBody = `To verify yout email address ${emailAddress} visit the following link:\n\n${urlWithoutHash}\n\n If you did not request this  verification, please ignore this email. If you feel something is wrong, please contact our support team: ${supportEmail}.`;
+				supportEmail = "transsafeproject@gmail.com",
+				emailBody = `Щоб підтвердити ваш ${emailAddress} перейдіть по наступному посиланню:\n\n${urlWithoutHash}\n\n Якщо ви не знаєте джерело цього повідомлення - ігноруйте його. Якщо ви відчули, що щось не так, повідомте: ${supportEmail}.`;
 
 			return emailBody;
 	}
