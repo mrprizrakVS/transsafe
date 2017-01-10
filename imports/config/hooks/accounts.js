@@ -21,6 +21,7 @@ AutoForm.hooks({
                         console.warn('Verification problem!');
                     } else {
                         FlowRouter.go('verify-email');
+                        alert('Лист для верифікації успішно відправлено');
                     }
                 });
             }
