@@ -29,8 +29,6 @@ accounts-password
 kadira:flow-router
 kadira:blaze-layout
 standard-minifier-css
-semantic:ui-dropdown
-semantic:ui-transition
 aldeed:collection2
 aldeed:autoform
 check
