@@ -7,36 +7,32 @@
 			<nav class="main-header-nav">
 				{{#if currentUser}}
 					<ul class="header-nav-list main-nav-list">
-						<li><a href="">СТО</a></li>
-						<li>
-							<a href="" class="ui dropdown">
-								<span>Особистий кабінет</span>
-								<ul class="menu registration-types">
-								  <li>
-								  	<a class="item item-dropdown" id="logout-btn">Вийти</a>
-								  </li>
-								  <li>
-								  	<a class="item item-dropdown" href="/account/settings" data-value="service">Налаштування</a>
-								  </li>
-								</ul>
-							</a>
+						<li><a class="nav-btn" href="">СТО</a></li>
+						<li class="ui dropdown">
+							<span class="nav-btn">Особистий кабінет</span>
+							<ul class="menu registration-types">
+							  <li>
+							  	<a class="item item-dropdown" id="logout-btn">Вийти</a>
+							  </li>
+							  <li>
+							  	<a class="item item-dropdown" href="/account/settings" data-value="service">Налаштування</a>
+							  </li>
+							</ul>
 						</li>
 					</ul>
 				{{else}}
 				<ul class="header-sign-list">
-					<li><a href="/auth">Авторизація</a></li>
-					<li>
-						<a href="/registration/user" class="ui dropdown">
-							<span>Реєстрація</span>
-							<ul class="menu registration-types">
-							  <li>
-							  	<a class="item item-dropdown" href="/registration/user" data-value="user">Користувач</a>
-							  </li>
-							  <li>
-							  	<a class="item item-dropdown" href="/registration/service" data-value="service">Сервіс</a>
-							  </li>
-							</ul>
-						</a>
+					<li><a class="nav-btn" href="/auth">Авторизація</a></li>
+					<li class="ui dropdown">
+						<span class="nav-btn">Реєстрація</span>
+						<ul class="menu registration-types">
+						  <li>
+						  	<a class="item item-dropdown" href="/registration/user" data-value="user">Користувач</a>
+						  </li>
+						  <li>
+						  	<a class="item item-dropdown" href="/registration/service" data-value="service">Сервіс</a>
+						  </li>
+						</ul>
 					</li>
 				</ul>
 				{{/if}}

@@ -27,15 +27,45 @@ body
 	justify-content flex-end
 	align-items center
 	font-size: 80%
-	a
+	.nav-btn
 		display inline-block
 		padding 11px 15px
 		text-decoration none
 		color $dark-grey
 		text-transform uppercase
 		background-color #f1f1f1
+		cursor pointer
 		&:hover
 			color $green
+
+.ui.dropdown
+	position relative
+	&:hover > ul.menu
+		opacity 1
+		visibility visible
+	> ul.menu
+		width calc(100% + 2px)
+		position absolute
+		left -1px
+		background-color #f1f1f1
+		list-style none
+		padding 0
+		border 2px solid #fff
+		border-top 1px solid rgba(154, 166, 178, 0.11)
+		opacity 0
+		visibility hidden
+		li
+			margin-left 0
+		a
+			display block
+			padding 13px 7px
+			color $dark-grey
+			text-decoration none
+			font-size 110%
+			cursor pointer
+			&:hover
+				background-color rgba(154, 166, 178, 0.11)
+				color $green
 
 .main-nav-list
 	list-style none
