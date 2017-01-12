@@ -1,7 +1,3 @@
 <template name="verifyEmailLayout">
-	{{#unless currentUser.emails.[0].verified}}
-		<p class="alert alert-warning">Ви маєте підтвердити свій email адрес. <a href="#" class="resend-email" id="resend-email">Відправити лист для верифікації повторно</a></p>
-	{{else}}
-		<h3>Вітаю вас, ви успішно пройшли реєстрацію</h3>
-	{{/unless}}
+	<h3>Вітаю вас, ви успішно пройшли реєстрацію</h3>
 </template>

@@ -6,6 +6,7 @@ import '../imports/ui/notFound/notFound.js';
 import '../imports/ui/auth/auth.js';
 import '../imports/ui/registrationService/registrationService.js';
 import '../imports/ui/emailVerified/emailVerified.js';
+import '../imports/ui/sendVerify/sendVerify.js';
 
 import '../imports/api/users.js';
 

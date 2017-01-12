@@ -20,7 +20,7 @@ AutoForm.hooks({
                     if(error) {
                         console.warn('Verification problem!');
                     } else {
-                        FlowRouter.go('verify-email');
+                        FlowRouter.go('send-verify');
                         alert('Лист для верифікації успішно відправлено');
                     }
                 });

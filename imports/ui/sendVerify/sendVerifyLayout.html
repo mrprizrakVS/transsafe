@@ -1,0 +1,5 @@
+<template name="sendVerifyLayout">
+	{{#unless currentUser.emails.[0].verified}}
+		<p class="alert alert-warning">Ви маєте підтвердити вказаний вами адрес - {{currentUser.emails.[0].address}} <a href="" class="resend-email basic-link" id="resend-email">Відправити лист для верифікації повторно</a></p>
+	{{/unless}}
+</template>
