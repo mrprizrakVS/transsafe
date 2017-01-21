@@ -10,4 +10,6 @@ import '../imports/ui/sendVerify/sendVerify.js';
 
 import '../imports/api/users.js';
 
+import '../imports/config/accounts.config.js';
 import '../imports/config/hooks/accounts.js';
+
