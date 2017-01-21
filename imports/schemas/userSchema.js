@@ -39,28 +39,6 @@ Schema.User = new SimpleSchema({
     optional: true,
     label: 'Профіль'
   },
-  username: {
-    type: String,
-    label: "Логін",
-    optional: true,
-    autoform: {
-      placeholder: 'Login'
-    }
-  },
-  emails: {
-    type: Array,
-    optional: true
-  },
-  "emails.$": {
-    type: Object,
-  },
-  "emails.$.address": {
-    type: String,
-    regEx: SimpleSchema.RegEx.Email
-  },
-  "emails.$.verified": {
-      type: Boolean,
-  },
   email: {
     type: String,
     optional: true,
@@ -82,17 +60,11 @@ Schema.User = new SimpleSchema({
   password: {
     type: String,
     label: "Пароль",
-    optional: true
-  },
-  services: {
-    type: Object,
     optional: true,
-    blackbox: true,
     autoform: {
-      type: 'hidden'
+      type: 'password'
     }
   }
-  // In future add roles here...
 });
 
 export const UsersSchema = Schema.User;
