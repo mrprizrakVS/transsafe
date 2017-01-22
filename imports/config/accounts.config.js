@@ -5,6 +5,6 @@ Accounts.ui.config({
 	passwordSignupFields: 'EMAIL_ONLY'
 });
 
-Accounts.onLogout(function() {
+Accounts.onLogout(() => {
 	FlowRouter.go('home');
 });
