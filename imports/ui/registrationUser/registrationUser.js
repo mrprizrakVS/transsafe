@@ -1,14 +1,40 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-import { Users } from '../../api/users.js';
+import { check } from 'meteor/check';
+import { Accounts } from 'meteor/accounts-base';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
-window.Users = Users;
+import { UsersSchema } from '../../schemas/userSchema.js';
+import insertDocument from '../../services/insert_doc.js';
 
 import './registrationUserLayout.html';
 
 
 Template.registrationUserLayout.helpers({
-	users() {
-		return Meteor.users();
+	UsersSchema() {
+		return UsersSchema;
+	}
+});
+
+Template.registrationUserLayout.events({
+	'submit #insertUserForm'(e, template) {
+		e.preventDefault();
+		let doc = insertDocument({}, e.target);
+
+		check(doc, UsersSchema);
+
+		Accounts.createUser(doc, (error) => {
+				if(error) {
+						console.warn('Registration error', error);
+				} else {
+						Meteor.call('sendVerificationLink', (error, response) => {
+								if(error) {
+										console.warn('Verification problem!');
+								} else {
+										FlowRouter.go('send-verify');
+								}
+						});
+				}
+		});
 	}
 });

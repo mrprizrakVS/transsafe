@@ -7,29 +7,6 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Users } from '../../api/users.js';
 
 AutoForm.hooks({
-  insertUserForm: {
-    onSubmit(doc) {
-        this.event.preventDefault();
-        check(doc, Users.simpleSchema());
-
-        Accounts.createUser(doc, (error) => {
-            if(error) {
-                console.warn('Registration error', error);
-            } else {
-                Meteor.call('sendVerificationLink', (error, response) => {
-                    if(error) {
-                        console.warn('Verification problem!');
-                    } else {
-                        FlowRouter.go('send-verify');
-                    }
-                });
-            }
-        });
-    },
-    onError: function(operation, error, template) {
-        console.log('Error', error);
-    }
-  },
   authForm: {
     onSubmit(doc) {
         this.event.preventDefault();

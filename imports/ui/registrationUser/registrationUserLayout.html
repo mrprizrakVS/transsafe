@@ -2,32 +2,7 @@
 	<section class="registration-section user-registration-section card-sect">
 		<h3 class="registration-title card-sect-title">Реєстрація користувача</h3>
 		<section class="card-inner-sect">
-			{{#autoForm collection="Users" id="insertUserForm" class="new-user-form"}}
-				<div class="form-group">
-					<label class="control-label">{{afFieldLabelText name='profile.firstName'}}</label>
-					{{> afFieldInput name='profile.firstName'}}
-				</div>
-				<div class="form-group">
-					<label class="control-label">{{afFieldLabelText name='profile.lastName'}}</label>
-					{{> afFieldInput name='profile.lastName'}}
-				</div>
-				<div class="form-group">
-					<label class="control-label">{{afFieldLabelText name='username'}}</label>
-					{{> afFieldInput name='username'}}
-				</div>
-				<div class="form-group">
-					{{> afQuickField name='profile.gender' options="allowed"}}
-				</div>
-				<div class="form-group">
-					<label class="control-label">Email</label>
-					{{> afFieldInput name='email'}}
-				</div>
-				<div class="form-group">
-					<label class="control-label">{{afFieldLabelText name='password'}}</label>
-					{{> afFieldInput type="password" name='password'}}
-				</div>
-				<button type="submit" class="btn btn-primary">Зареєструватися</button>
-			{{/autoForm}}
+			{{> quickForm id="insertUserForm" schema=UsersSchema}}
 		</section>
 	</section>
 </template>
