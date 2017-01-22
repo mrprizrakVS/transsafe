@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { HTTP } from 'meteor/http'
 import { ServiceSchema } from '../../schemas/serviceSchema.js';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import insertDocument from '../../services/insert_doc.js';
 
