@@ -49,8 +49,8 @@ Schema.generalInfo = new SimpleSchema({
       placeholder: "вул. Чорновола 15а"
     }
   },
-  phones: {
-    type: Number,
+  phone: {
+    type: String,
     optional: true,
     label: "Телефон",
     autoform: {
@@ -58,7 +58,7 @@ Schema.generalInfo = new SimpleSchema({
     }
   },
   numberOfWorker: {
-    type: Number,
+    type: String,
     optional: true,
     label: "К-сть робітників",
     autoform: {
@@ -78,6 +78,13 @@ Schema.ServiceProfile = new SimpleSchema({
     optional: true,
     label: "Контакна інформація"
   },
+  role: {
+    type: String,
+    optional: true,
+    autoform: {
+      type: 'hidden'
+    }
+  }
 });
 
 

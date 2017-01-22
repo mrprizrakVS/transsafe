@@ -11,30 +11,30 @@ import './registrationUserLayout.html';
 
 
 Template.registrationUserLayout.helpers({
-	UsersSchema() {
-		return UsersSchema;
-	}
+  UsersSchema
 });
 
 Template.registrationUserLayout.events({
-	'submit #insertUserForm'(e, template) {
-		e.preventDefault();
-		let doc = insertDocument({}, e.target);
+  'submit #insertUserForm'(e, template) {
+    e.preventDefault();
+    let doc = insertDocument({}, e.target);
 
-		check(doc, UsersSchema);
+    doc.profile.role = 'user';
 
-		Accounts.createUser(doc, (error) => {
-				if(error) {
-						console.warn('Registration error', error);
-				} else {
-						Meteor.call('sendVerificationLink', (error, response) => {
-								if(error) {
-										console.warn('Verification problem!');
-								} else {
-										FlowRouter.go('send-verify');
-								}
-						});
-				}
-		});
-	}
+    check(doc, UsersSchema);
+
+    Accounts.createUser(doc, (error) => {
+        if(error) {
+            console.warn('Registration error', error);
+        } else {
+            Meteor.call('sendVerificationLink', (error, response) => {
+                if(error) {
+                    console.warn('Verification problem!');
+                } else {
+                    FlowRouter.go('send-verify');
+                }
+            });
+        }
+    });
+  }
 });

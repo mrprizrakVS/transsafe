@@ -21,6 +21,13 @@ Schema.UserProfile = new SimpleSchema({
       placeholder: 'Петриченко'
     }
   },
+  role: {
+    type: String,
+    optional: true,
+    autoform: {
+      type: 'hidden'
+    }
+  },
   gender: {
     type: String,
     allowedValues: ['Чоловік', 'Жінка'],
