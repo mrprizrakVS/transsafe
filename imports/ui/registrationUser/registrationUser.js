@@ -4,6 +4,7 @@ import { check } from 'meteor/check';
 import { Accounts } from 'meteor/accounts-base';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
+
 import { UsersSchema } from '../../schemas/userSchema.js';
 import insertDocument from '../../services/insert_doc.js';
 

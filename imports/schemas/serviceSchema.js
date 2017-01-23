@@ -8,7 +8,6 @@ Schema.contactInfo = new SimpleSchema({
   contactPerson: {
     type: String,
     label: "Контактна особа",
-    optional: true,
     autoform: {
       placeholder: "Василь"
     }
@@ -35,7 +34,6 @@ Schema.generalInfo = new SimpleSchema({
   compType: {
     type: String,
     allowedValues: ['Компанія, що надає послуги'],
-    optional: true,
     label: "Тип компанії",
     autoform: {
       firstOption: "- Оберіть тип -"
@@ -44,14 +42,12 @@ Schema.generalInfo = new SimpleSchema({
   address: {
     type: String,
     label: "Адреса",
-    optional: true,
     autoform: {
       placeholder: "вул. Чорновола 15а"
     }
   },
   phone: {
     type: String,
-    optional: true,
     label: "Телефон",
     autoform: {
       placeholder: "Номер"
@@ -98,7 +94,6 @@ Schema.ServiceSchema = new SimpleSchema({
     type: String,
     label: "Email адрес",
     regEx: SimpleSchema.RegEx.Email,
-    optional: true,
     autoform: {
       placeholder: "example@gmail.com"
     }
