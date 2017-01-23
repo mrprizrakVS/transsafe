@@ -1,5 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
+import '../config/schemas.config.js';
+
 const Schema = {};
 
 SimpleSchema.debug = true;
@@ -7,7 +9,6 @@ SimpleSchema.debug = true;
 Schema.UserProfile = new SimpleSchema({
   firstName: {
     type: String,
-    optional: true,
     label: "Ім'я",
     autoform: {
       placeholder: 'Андрій'
@@ -15,7 +16,6 @@ Schema.UserProfile = new SimpleSchema({
   },
   lastName: {
     type: String,
-    optional: true,
     label: "Прізвище",
     autoform: {
       placeholder: 'Петриченко'
@@ -31,7 +31,6 @@ Schema.UserProfile = new SimpleSchema({
   gender: {
     type: String,
     allowedValues: ['Чоловік', 'Жінка'],
-    optional: true,
     label: "Стать",
     autoform: {
       firstOption: "- Оберіть стать -"
@@ -43,12 +42,10 @@ Schema.UserProfile = new SimpleSchema({
 Schema.User = new SimpleSchema({
   profile: {
     type: Schema.UserProfile,
-    optional: true,
     label: 'Профіль'
   },
   email: {
     type: String,
-    optional: true,
     regEx: SimpleSchema.RegEx.Email,
     autoform: {
       placeholder: 'example@gmail.com'
@@ -67,7 +64,6 @@ Schema.User = new SimpleSchema({
   password: {
     type: String,
     label: "Пароль",
-    optional: true,
     autoform: {
       type: 'password'
     }

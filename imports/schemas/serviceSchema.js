@@ -1,5 +1,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
+import '../config/schemas.config.js';
+
 const Schema = {};
 
 SimpleSchema.debug = true;
@@ -25,7 +27,6 @@ Schema.contactInfo = new SimpleSchema({
 Schema.generalInfo = new SimpleSchema({
   name: {
     type: String,
-    optional: true,
     label: "Назва",
     autoform: {
       placeholder: "Гарант-Автотехнік"
@@ -66,12 +67,10 @@ Schema.generalInfo = new SimpleSchema({
 Schema.ServiceProfile = new SimpleSchema({
   generalInfo: {
     type: Schema.generalInfo,
-    optional: true,
     label: "Загальна інформація"
   },
   contactInfo: {
     type: Schema.contactInfo,
-    optional: true,
     label: "Контакна інформація"
   },
   role: {
@@ -87,7 +86,6 @@ Schema.ServiceProfile = new SimpleSchema({
 Schema.ServiceSchema = new SimpleSchema({
   profile: {
     type: Schema.ServiceProfile,
-    optional: true,
     label: 'Профіль'
   },
   email: {
