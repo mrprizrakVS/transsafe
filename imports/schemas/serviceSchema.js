@@ -113,7 +113,6 @@ Schema.ServiceSchema = new SimpleSchema({
   password: {
     type: String,
     label: "Пароль",
-    optional: true,
     autoform: {
        type: "password",
        autocomplete: false,
