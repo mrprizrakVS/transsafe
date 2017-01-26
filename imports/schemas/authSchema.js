@@ -10,7 +10,7 @@ Schema.authSchema = new SimpleSchema({
   email: {
     type: String,
     label: "Email адрес",
-    // regEx: SimpleSchema.RegEx.Email,
+    regEx: SimpleSchema.RegEx.Email,
     autoform: {
       placeholder: "example@gmail.com"
     }
@@ -19,6 +19,8 @@ Schema.authSchema = new SimpleSchema({
     type: String,
     label: "Пароль",
     autoform: {
+      type: "password",
+      autocomplete: false,
       placeholder: "Пароль"
     }
   }

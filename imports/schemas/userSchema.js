@@ -65,7 +65,9 @@ Schema.User = new SimpleSchema({
     type: String,
     label: "Пароль",
     autoform: {
-      type: 'password'
+      type: "password",
+      autocomplete: false,
+      placeholder: "Пароль"
     }
   }
 });

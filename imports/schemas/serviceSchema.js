@@ -11,7 +11,8 @@ Schema.contactInfo = new SimpleSchema({
     type: String,
     label: "Контактна особа",
     autoform: {
-      placeholder: "Василь"
+      placeholder: "Василь",
+      autocomplete: false
     }
   },
   companySite: {
@@ -29,7 +30,8 @@ Schema.generalInfo = new SimpleSchema({
     type: String,
     label: "Назва",
     autoform: {
-      placeholder: "Гарант-Автотехнік"
+      placeholder: "Гарант-Автотехнік",
+      autocomplete: false
     }
   },
   compType: {
@@ -44,7 +46,8 @@ Schema.generalInfo = new SimpleSchema({
     type: String,
     label: "Адреса",
     autoform: {
-      placeholder: "вул. Чорновола 15а"
+      placeholder: "вул. Чорновола 15а",
+      autocomplete: false
     }
   },
   phone: {
@@ -59,7 +62,8 @@ Schema.generalInfo = new SimpleSchema({
     optional: true,
     label: "К-сть робітників",
     autoform: {
-      placeholder: "12"
+      placeholder: "12",
+      autocomplete: false
     }
   }
 });
@@ -111,8 +115,10 @@ Schema.ServiceSchema = new SimpleSchema({
     label: "Пароль",
     optional: true,
     autoform: {
-      placeholder: "Пароль"
-    }
+       type: "password",
+       autocomplete: false,
+       placeholder: "Пароль"
+     }
   }
 });
 
