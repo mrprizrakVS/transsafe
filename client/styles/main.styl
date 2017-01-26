@@ -2,161 +2,162 @@
 @import 'fonts.styl'
 
 body
-	background-color $gray
-	font-family 'RobotoCondensed-Regular'
-	font-size 100%
+  background-color $gray
+  font-family 'RobotoCondensed-Regular'
+  font-size 100%
+  overflow-y scroll
 
 *, *:before, *:after
-	box-sizing border-box
+  box-sizing border-box
 
 .main-wrapper
-	width 80%
-	margin 0 auto
-	max-width 1080px
+  width 80%
+  margin 0 auto
+  max-width 1080px
 
 .main-header
-	background-color $white
-	display flex
-	justify-content space-between
-	align-items center
-	border-bottom 10px solid $green
+  background-color $white
+  display flex
+  justify-content space-between
+  align-items center
+  border-bottom 10px solid $green
 
 .main-header-nav
-	flex 1
-	display flex
-	justify-content flex-end
-	align-items center
-	font-size: 80%
-	.nav-btn
-		display inline-block
-		padding 11px 15px
-		text-decoration none
-		color $dark-grey
-		text-transform uppercase
-		background-color #f1f1f1
-		cursor pointer
-		&:hover
-			color $green
+  flex 1
+  display flex
+  justify-content flex-end
+  align-items center
+  font-size: 80%
+  .nav-btn
+    display inline-block
+    padding 11px 15px
+    text-decoration none
+    color $dark-grey
+    text-transform uppercase
+    background-color #f1f1f1
+    cursor pointer
+    &:hover
+      color $green
 
 .ui.dropdown
-	position relative
-	&:hover > ul.menu
-		opacity 1
-		visibility visible
-	> ul.menu
-		width calc(100% + 2px)
-		position absolute
-		left -1px
-		background-color #f1f1f1
-		list-style none
-		padding 0
-		border 2px solid #fff
-		border-top 1px solid rgba(154, 166, 178, 0.11)
-		opacity 0
-		visibility hidden
-		li
-			margin-left 0
-		a
-			display block
-			padding 13px 7px
-			color $dark-grey
-			text-decoration none
-			font-size 110%
-			cursor pointer
-			&:hover
-				background-color rgba(154, 166, 178, 0.11)
-				color $green
+  position relative
+  &:hover > ul.menu
+    opacity 1
+    visibility visible
+  > ul.menu
+    width calc(100% + 2px)
+    position absolute
+    left -1px
+    background-color #f1f1f1
+    list-style none
+    padding 0
+    border 2px solid #fff
+    border-top 1px solid rgba(154, 166, 178, 0.11)
+    opacity 0
+    visibility hidden
+    li
+      margin-left 0
+    a
+      display block
+      padding 13px 7px
+      color $dark-grey
+      text-decoration none
+      font-size 110%
+      cursor pointer
+      &:hover
+        background-color rgba(154, 166, 178, 0.11)
+        color $green
 
 .main-nav-list
-	list-style none
-	display flex
-	flex 1
-	justify-content flex-end
-	li
-		margin-left 2%
+  list-style none
+  display flex
+  flex 1
+  justify-content flex-end
+  li
+    margin-left 2%
 
 .container
-	padding 1.5% 3%
+  padding 1.5% 3%
 
 .main-logo
-	display block
-	width 8%
-	color $green
+  display block
+  width 8%
+  color $green
 
 .header-sign-list
-	list-style none
-	display flex
-	li:last-child
-		border-left 1px solid #e0e2e4
+  list-style none
+  display flex
+  li:last-child
+    border-left 1px solid #e0e2e4
 
 .not-found-wrap
-	text-align center;
-	font-size 150%
-	color $dark
-	.status-code
-		display block
+  text-align center;
+  font-size 150%
+  color $dark
+  .status-code
+    display block
 
 .registration-types .item-dropdown
-	font-size 80%
+  font-size 80%
 
 .btn.btn-primary
-	background-color $dark
-	color $white
-	padding 1% 2%
-	border none
-	border-radius 4px
-	font-size 90%
-	&:hover
-		background-color #4c5e6f
+  background-color $dark
+  color $white
+  padding 1% 2%
+  border none
+  border-radius 4px
+  font-size 90%
+  &:hover
+    background-color #4c5e6f
 
 .card-sect
-	background-color $white
-	border-radius 4px
-	form > .panel-default:not(:first-of-type)
-		padding-top 2%
-		margin-top 2%
-		border-top 1px solid $gray
-	.form-group
-		margin-bottom 2%
-		label
-			display block
-			margin-bottom 3px
-			color $dark
-		input, select
-			display block
-			width 100%
-			height 36px
-			border 3px solid $gray
-			border-radius 4px
-			padding 0 1%
-			background-color transparent
-			&:focus
-				outline none
+  background-color $white
+  border-radius 4px
+  form > .panel-default:not(:first-of-type)
+    padding-top 2%
+    margin-top 2%
+    border-top 1px solid $gray
+  .form-group
+    margin-bottom 2%
+    label
+      display block
+      margin-bottom 3px
+      color $dark
+    input, select
+      display block
+      width 100%
+      height 36px
+      border 3px solid $gray
+      border-radius 4px
+      padding 0 1%
+      background-color transparent
+      &:focus
+        outline none
 
 .card-inner-sect
-	padding 0 2% 2% 2%
+  padding 0 2% 2% 2%
 
 .card-sect-title
-	background-color $dark
-	color $white
-	padding 2%
-	border-top-right-radius 4px
-	border-top-left-radius 4px
-	font-size 98%
+  background-color $dark
+  color $white
+  padding 2%
+  border-top-right-radius 4px
+  border-top-left-radius 4px
+  font-size 98%
 
 .basic-link
-	color $green
+  color $green
 
 .panel-body
-	> .help-block
-		display none
+  > .help-block
+    display none
 
 .form-group.has-error
-	> .help-block
-		display block
-		padding 0.5%
-		background-color rgba(188, 0, 0, 0.14)
-		margin-top 1%
-		border-radius 2px
-		font-size 84%
-		color rgba(96, 125, 139, 0.58)
+  > .help-block
+    display block
+    padding 0.5%
+    background-color rgba(188, 0, 0, 0.14)
+    margin-top 1%
+    border-radius 2px
+    font-size 84%
+    color rgba(96, 125, 139, 0.58)
