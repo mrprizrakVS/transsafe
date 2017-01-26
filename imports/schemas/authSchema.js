@@ -6,20 +6,22 @@ const Schema = {};
 
 SimpleSchema.debug = true;
 
-Schema = new SimpleSchema({
-  email :{
+Schema.authSchema = new SimpleSchema({
+  email: {
     type: String,
     label: "Email адрес",
-    regEx: SimpleSchema.RegEx.Email,
+    // regEx: SimpleSchema.RegEx.Email,
     autoform: {
       placeholder: "example@gmail.com"
-    },
-    password: {
-      type: String,
-      label: "Пароль",
-      autoform: {
-        placeholder: "Пароль"
-      }
+    }
+  },
+  password: {
+    type: String,
+    label: "Пароль",
+    autoform: {
+      placeholder: "Пароль"
     }
   }
 });
+
+export const AuthSchema = Schema.authSchema;

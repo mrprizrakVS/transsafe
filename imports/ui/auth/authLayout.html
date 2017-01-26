@@ -2,17 +2,7 @@
 	<section class="registration-section user-registration-section card-sect">
 		<h3 class="registration-title card-sect-title">Авторизація</h3>
 		<section class="card-inner-sect">
-			{{#autoForm collection="Users" id="authForm" class="auth-form"}}
-				<div class="form-group">
-					<label class="control-label">E-mail</label>
-					{{> afFieldInput name='email'}}
-				</div>
-				<div class="form-group">
-					<label class="control-label">Пароль</label>
-					{{> afFieldInput type="password" name='password'}}
-				</div>
-				<button type="submit" class="btn btn-primary">Увійти</button>
-			{{/autoForm}}
+			{{> quickForm buttonContent="Зберегти" schema=AuthSchema id="authUser"}}
 		</section>
 	</section>
 </template>
