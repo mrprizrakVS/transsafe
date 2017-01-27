@@ -7,9 +7,12 @@ import '../imports/ui/auth/auth.js';
 import '../imports/ui/registrationService/registrationService.js';
 import '../imports/ui/emailVerified/emailVerified.js';
 import '../imports/ui/sendVerify/sendVerify.js';
+import '../imports/ui/messageState/messageState.js';
 
 import '../imports/api/users.js';
 
 import '../imports/config/accounts.config.js';
 import '../imports/config/hooks/accounts.js';
+
+import '../imports/helpers/message.js';
 
