@@ -8,6 +8,7 @@ import '../imports/ui/registrationService/registrationService.js';
 import '../imports/ui/emailVerified/emailVerified.js';
 import '../imports/ui/sendVerify/sendVerify.js';
 import '../imports/ui/messageState/messageState.js';
+import '../imports/ui/userAccount/userAccount.js';
 
 import '../imports/api/users.js';
 
