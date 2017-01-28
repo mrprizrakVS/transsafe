@@ -211,10 +211,11 @@ body
   display block
   flex 1
   text-align center
-  &:not(:first-of-type)
+  &:not(:first-child)
     margin-left 2%
 
 .user-a-profile-photo-wrap
+  position relative
   border-top-left-radius 0
   border-top-right-radius 0
 
@@ -222,3 +223,14 @@ body
   margin 0
   padding 2%
   font-weight normal
+
+.upload-u-profile-photo
+  input[type="file"]
+    display none
+
+.upload-progress
+  height 5px
+  position absolute
+  bottom 0
+  left 0
+  background-color $dark-gray

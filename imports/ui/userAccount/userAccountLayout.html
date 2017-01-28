@@ -4,8 +4,15 @@
       <h3 class="card-sect-title user-profile-title">Профіль</h3>
       <section class="user-a-profile-photo-wrap u-profile-sect card-sect">
         <img class="user-a-profile-photo" draggable="false" src="{{image.path}}" alt="">
+        {{#with currentUpload}}
+        <div class="upload-progress" style="width: {{progress.get}}%" data-value="{{progress.get}}"></div>
+        {{/with}}
       </section>
       <section class="profile-acts-btns u-profile-sect card-sect">
+        <label for="uploadMainPhoto" class="profile-edit-btn upload-u-profile-photo btn-light-gray">
+          <input id="uploadMainPhoto" type="file" />
+          <i class="fa fa-camera" aria-hidden="true"></i>
+        </label>
         <a href="/user/edit" class="profile-edit-btn btn-light-gray">
           <i class="fa fa-pencil" aria-hidden="true"></i>
         </a>
@@ -21,10 +28,4 @@
       <h3 class="u-profile-sect profile-full-name card-sect">{{user.profile.firstName}} {{user.profile.lastName}}</h3>
     </section>
   </section>
-  {{#with currentUpload}}
-    Uploading <b>{{file.name}}</b>:
-    <span id="progress">{{progress.get}}%</span>
-  {{else}}
-    <input id="fileInput" type="file" />
-  {{/with}}
 </template>
