@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 
-Meteor.publish('usersList', (userId) => {
-  console.log(Meteor.users.find().count());
+Meteor.publish('user', (userId) => {
   return Meteor.users.find(userId);
 });

@@ -8,7 +8,7 @@ import './userAccountLayout.html';
 
 Template.userAccountLayout.onCreated(function() {
   this.autorun(() => {
-    Meteor.subscribe('usersList', FlowRouter.getParam('id'));
+    Meteor.subscribe('user', FlowRouter.getParam('id'));
   });
 });
 
