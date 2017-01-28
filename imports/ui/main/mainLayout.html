@@ -12,10 +12,18 @@
               <span class="nav-btn">Особистий кабінет</span>
               <ul class="menu registration-types">
                 <li>
-                  <a class="item item-dropdown" id="logout-btn">Вийти</a>
+                  <a class="item item-dropdown" href="
+                  {{#if userRole}}
+                    /user/profile/{{currentUser._id}}
+                  {{else}}
+                    /service/profile/{{currentUser._id}}
+                  {{/if}}" data-value="service">Профіль</a>
                 </li>
                 <li>
                   <a class="item item-dropdown" href="/account/settings" data-value="service">Налаштування</a>
+                </li>
+                <li>
+                  <a class="item item-dropdown" id="logout-btn">Вийти</a>
                 </li>
               </ul>
             </li>

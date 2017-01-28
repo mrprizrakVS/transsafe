@@ -16,11 +16,11 @@ body
   max-width 1080px
 
 .main-header
-  background-color $white
   display flex
-  justify-content space-between
   align-items center
+  justify-content space-between
   border-bottom 10px solid $green
+  background-color $white
 
 .main-header-nav
   flex 1
@@ -32,9 +32,9 @@ body
     display inline-block
     padding 11px 15px
     text-decoration none
-    color $dark-grey
+    color $dark-gray
     text-transform uppercase
-    background-color #f1f1f1
+    background-color $light-gray
     cursor pointer
     &:hover
       color $green
@@ -48,11 +48,11 @@ body
     width calc(100% + 2px)
     position absolute
     left -1px
-    background-color #f1f1f1
-    list-style none
     padding 0
-    border 2px solid #fff
     border-top 1px solid rgba(154, 166, 178, 0.11)
+    background-color $light-gray
+    list-style none
+    border 2px solid #fff
     opacity 0
     visibility hidden
     li
@@ -60,7 +60,7 @@ body
     a
       display block
       padding 13px 7px
-      color $dark-grey
+      color $dark-gray
       text-decoration none
       font-size 110%
       cursor pointer
@@ -69,9 +69,9 @@ body
         color $green
 
 .main-nav-list
-  list-style none
   display flex
   flex 1
+  list-style none
   justify-content flex-end
   li
     margin-left 2%
@@ -85,14 +85,14 @@ body
   color $green
 
 .header-sign-list
-  list-style none
   display flex
+  list-style none
   li:last-child
     border-left 1px solid #e0e2e4
 
 .not-found-wrap
-  text-align center;
   font-size 150%
+  text-align center;
   color $dark
   .status-code
     display block
@@ -101,18 +101,29 @@ body
   font-size 80%
 
 .btn.btn-primary
+  padding 1% 2%
   background-color $dark
   color $white
-  padding 1% 2%
   border none
   border-radius 4px
   font-size 90%
   &:hover
     background-color #4c5e6f
 
+.btn-light-gray
+  padding 3%
+  display inline-block
+  background-color $light-gray
+  color $dark-gray
+  text-decoration none
+  cursor pointer
+  &:hover
+    background-color #edecec
+
 .card-sect
   background-color $white
   border-radius 4px
+  box-shadow 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
   form > .panel-default:not(:first-of-type)
     padding-top 2%
     margin-top 2%
@@ -138,11 +149,11 @@ body
   padding 0 2% 2% 2%
 
 .card-sect-title
-  background-color $dark
-  color $white
   padding 2%
   border-top-right-radius 4px
   border-top-left-radius 4px
+  background-color $dark
+  color $white
   font-size 98%
 
 .basic-link
@@ -164,3 +175,50 @@ body
 
 .message-state-value
   text-align center
+
+
+// User account profile
+
+.user-account-profile-wrap
+  display flex
+
+.user-a-profile-sidebar
+  width 25%
+  margin-right 2%
+
+.user-a-profile-photo
+  max-width 100%
+  height auto
+  border-radius 50%
+
+.u-profile-sect
+  padding 4%
+
+.main-content-wrap-u-p
+  flex 1
+
+.user-profile-title
+  padding 4%
+  margin 0
+
+.u-profile-sect
+  margin-bottom 5%
+
+.profile-acts-btns
+  display flex
+
+.profile-edit-btn
+  display block
+  flex 1
+  text-align center
+  &:not(:first-of-type)
+    margin-left 2%
+
+.user-a-profile-photo-wrap
+  border-top-left-radius 0
+  border-top-right-radius 0
+
+.profile-full-name
+  margin 0
+  padding 2%
+  font-weight normal

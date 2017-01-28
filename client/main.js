@@ -11,9 +11,11 @@ import '../imports/ui/messageState/messageState.js';
 import '../imports/ui/userAccount/userAccount.js';
 
 import '../imports/api/users.js';
+import '../imports/api/user.js';
 
 import '../imports/config/accounts.config.js';
 import '../imports/config/hooks/accounts.js';
 
 import '../imports/helpers/message.js';
+import '../imports/helpers/showEmail.js';
 

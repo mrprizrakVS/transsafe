@@ -1,4 +1,24 @@
 <template name="userAccountLayout">
-  <h3>User account layout</h3>
-  <h4>{{title}}</h4>
+  <section class="user-account-profile-wrap">
+    <aside class="user-a-profile-sidebar">
+      <h3 class="card-sect-title user-profile-title">Профіль</h3>
+      <section class="user-a-profile-photo-wrap u-profile-sect card-sect">
+        <img class="user-a-profile-photo" draggable="false" src="https://avatars1.githubusercontent.com/u/13764263?v=3&s=460" alt="">
+      </section>
+      <section class="profile-acts-btns u-profile-sect card-sect">
+        <a href="/user/edit" class="profile-edit-btn btn-light-gray">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </a>
+        <a href="" class="profile-edit-btn btn-light-gray">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </a>
+      </section>
+      <section class="profile-acts-btns u-profile-sect card-sect">
+        <a href="mailto:{{showEmail user}}" class="profile-edit-btn btn-light-gray">{{showEmail user}}</a>
+      </section>
+    </aside>
+    <section class="main-content-wrap-u-p">
+      <h3 class="u-profile-sect profile-full-name card-sect">{{user.profile.firstName}} {{user.profile.lastName}}</h3>
+    </section>
+  </section>
 </template>
