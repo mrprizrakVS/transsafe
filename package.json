@@ -2,7 +2,7 @@
   "name": "transsafe",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "MAIL_URL=smtp://transsafeproject%40gmail.com:transsafe@smtp.gmail.com:465/ meteor --settings settings.json"
   },
   "dependencies": {
     "babel-runtime": "6.18.0",
