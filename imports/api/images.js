@@ -1,8 +1,9 @@
 import { FilesCollection } from 'meteor/ostrio:files';
 
-const Images = new FilesCollection({
-  collectionName: 'Images',
+const UserImages = new FilesCollection({
+  collectionName: 'UserImages',
   allowClientCode: false,
+  storagePath: `/home/vidia/assets/UserImages`,
   onBeforeUpload(file) {
     if(file.size <= 10485760 && /png|jpg|jpeg/i.test(file.extension)) {
       return true;
@@ -12,4 +13,4 @@ const Images = new FilesCollection({
   }
 });
 
-export { Images }
+export { UserImages }

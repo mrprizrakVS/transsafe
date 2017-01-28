@@ -15,7 +15,6 @@ import '../imports/api/user.js';
 import '../imports/api/images.js';
 
 import '../imports/config/accounts.config.js';
-import '../imports/config/hooks/accounts.js';
 
 import '../imports/helpers/message.js';
 import '../imports/helpers/showEmail.js';

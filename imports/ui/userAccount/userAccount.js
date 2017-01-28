@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { Images } from '../../api/images.js';
+import { UserImages } from '../../api/images.js';
 
 import { User } from '../../api/user.js';
 
@@ -11,7 +11,7 @@ Template.userAccountLayout.onCreated(function() {
   this.autorun(() => {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
     Meteor.subscribe('files.images.all');
-    window.Images = Images;
+    window.UserImages = UserImages;
   });
 });
 
@@ -20,7 +20,7 @@ Template.userAccountLayout.helpers({
     return User.findOne();
   },
   image() {
-    return Images.findOne();
+    return UserImages.findOne();
   }
 });
 
@@ -42,7 +42,7 @@ Template.userAccountLayout.events({
     if (e.currentTarget.files && e.currentTarget.files[0]) {
       // We upload only one file, in case
       // multiple files were selected
-      var upload = Images.insert({
+      var upload = UserImages.insert({
         file: e.currentTarget.files[0],
         streams: 'dynamic',
         chunkSize: 'dynamic'
