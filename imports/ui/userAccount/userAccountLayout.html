@@ -3,7 +3,7 @@
     <aside class="user-a-profile-sidebar">
       <h3 class="card-sect-title user-profile-title">Профіль</h3>
       <section class="user-a-profile-photo-wrap u-profile-sect card-sect">
-        <img class="user-a-profile-photo" draggable="false" src="{{image.path}}" alt="">
+        <img class="user-a-profile-photo" draggable="false" src="{{photoConvertor image.path}}" alt="">
         {{#with currentUpload}}
         <div class="upload-progress" style="width: {{progress.get}}%" data-value="{{progress.get}}"></div>
         {{/with}}

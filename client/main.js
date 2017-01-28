@@ -18,4 +18,5 @@ import '../imports/config/accounts.config.js';
 
 import '../imports/helpers/message.js';
 import '../imports/helpers/showEmail.js';
+import '../imports/helpers/photoConvertor.js';
 

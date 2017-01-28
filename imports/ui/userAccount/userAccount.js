@@ -12,6 +12,7 @@ Template.userAccountLayout.onCreated(function() {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
     Meteor.subscribe('files.images.all');
   });
+  window.UserImages = UserImages;
   this.currentUpload = new ReactiveVar(false);
 });
 
