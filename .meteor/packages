@@ -32,5 +32,3 @@ check
 http
 meteorhacks:fast-render
 ostrio:files
-
-npm-container
