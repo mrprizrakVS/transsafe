@@ -12,6 +12,7 @@ import '../imports/ui/userAccount/userAccount.js';
 
 import '../imports/api/users.js';
 import '../imports/api/user.js';
+import '../imports/api/images.js';
 
 import '../imports/config/accounts.config.js';
 import '../imports/config/hooks/accounts.js';

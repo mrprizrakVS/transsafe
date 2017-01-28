@@ -3,7 +3,7 @@
     <aside class="user-a-profile-sidebar">
       <h3 class="card-sect-title user-profile-title">Профіль</h3>
       <section class="user-a-profile-photo-wrap u-profile-sect card-sect">
-        <img class="user-a-profile-photo" draggable="false" src="https://avatars1.githubusercontent.com/u/13764263?v=3&s=460" alt="">
+        <img class="user-a-profile-photo" draggable="false" src="{{image.path}}" alt="">
       </section>
       <section class="profile-acts-btns u-profile-sect card-sect">
         <a href="/user/edit" class="profile-edit-btn btn-light-gray">
@@ -21,4 +21,10 @@
       <h3 class="u-profile-sect profile-full-name card-sect">{{user.profile.firstName}} {{user.profile.lastName}}</h3>
     </section>
   </section>
+  {{#with currentUpload}}
+    Uploading <b>{{file.name}}</b>:
+    <span id="progress">{{progress.get}}%</span>
+  {{else}}
+    <input id="fileInput" type="file" />
+  {{/with}}
 </template>

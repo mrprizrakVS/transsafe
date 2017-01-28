@@ -1,4 +1,7 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+
+import { Images } from '../../api/images.js';
 
 import './mainLayout.html';
 
