@@ -9,10 +9,7 @@ import '../imports/ui/emailVerified/emailVerified.js';
 import '../imports/ui/sendVerify/sendVerify.js';
 import '../imports/ui/messageState/messageState.js';
 import '../imports/ui/userAccount/userAccount.js';
-
-import '../imports/api/users.js';
-import '../imports/api/user.js';
-import '../imports/api/images.js';
+import '../imports/ui/userAccountEdit/userAccountEdit.js';
 
 import '../imports/config/accounts.config.js';
 
