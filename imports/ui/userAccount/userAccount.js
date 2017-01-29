@@ -12,7 +12,6 @@ Template.userAccountLayout.onCreated(function() {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
     Meteor.subscribe('files.images.all');
   });
-  window.UserImages = UserImages;
   this.currentUpload = new ReactiveVar(false);
 });
 
@@ -21,7 +20,10 @@ Template.userAccountLayout.helpers({
     return User.findOne();
   },
   image() {
-    return UserImages.findOne();
+    return UserImages.findOne({userId: FlowRouter.getParam('id')}, {
+      sort: { 'meta.date': -1 },
+      limit: 1
+    });
   },
   currentUpload() {
     return Template.instance().currentUpload.get();
@@ -34,7 +36,10 @@ Template.userAccountLayout.events({
       let upload = UserImages.insert({
         file: e.currentTarget.files[0],
         streams: 'dynamic',
-        chunkSize: 'dynamic'
+        chunkSize: 'dynamic',
+        meta: {
+          date: new Date()
+        }
       }, false);
 
       upload.on('start', function() {
@@ -45,7 +50,7 @@ Template.userAccountLayout.events({
         if (error) {
           alert(`Помилка при завантаженні: ${error}`);
         } else {
-          alert(`File "${fileObj.name}" successfully uploaded`);
+          alert(`Зображення "${fileObj.name}" успішно завантажене`);
         }
         template.currentUpload.set(false);
       });
