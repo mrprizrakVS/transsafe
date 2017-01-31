@@ -1,9 +1,11 @@
 import { Template } from 'meteor/templating';
 
 import { User } from '../../api/user.js';
-import { UsersSchema } from '../../schemas/userSchema.js';
+import { UsersProfileSchema } from '../../schemas/userProfileSchema.js';
 import insertDocument from '../../services/insert_doc.js';
 import { ReactiveVar } from 'meteor/reactive-var';
+
+import './userAccountEditLayout.html';
 
 Template.userAccountLayout.onCreated(function() {
   this.autorun(() => {
@@ -15,10 +17,9 @@ Template.userAccountLayout.onCreated(function() {
 });
 
 
-import './userAccountEditLayout.html';
 
 Template.userAccountEditLayout.helpers({
-  UsersSchema,
+  UsersProfileSchema,
   userDoc() {
     let user = User.findOne();
     user ? user.email = user.emails[0].address : null;
@@ -27,11 +28,15 @@ Template.userAccountEditLayout.helpers({
   }
 });
 
-Template.userAccountLayout.events({
+Template.userAccountEditLayout.events({
   'submit #editBasisUserForm'(e, template) {
+    debugger;
+    console.log('e', e);
     e.preventDefault();
 
+
     let doc = insertDocument({}, e.target);
+    UserSchema.namedContext().validate(doc)
 
     check(doc, UserSchema);
 
@@ -39,26 +44,4 @@ Template.userAccountLayout.events({
 
     // Meteor.users.update(template.userId.get(), doc);
   }
-  // 'submit #insertUserForm'(e, template) {
-  //   e.preventDefault();
-  //   let doc = insertDocument({}, e.target);
-
-  //   doc.profile.role = 'user';
-
-  //   check(doc, UsersSchema);
-
-  //   Accounts.createUser(doc, (error) => {
-  //       if(error) {
-  //           console.warn('Registration error', error);
-  //       } else {
-  //           Meteor.call('sendVerificationLink', (error, response) => {
-  //               if(error) {
-  //                   console.warn('Verification problem!');
-  //               } else {
-  //                   FlowRouter.go('send-verify');
-  //               }
-  //           });
-  //       }
-  //   });
-  // }
 });
