@@ -6,6 +6,41 @@ const Schema = {};
 
 SimpleSchema.debug = true;
 
+Schema.UserProfileContact = new SimpleSchema({
+  country: {
+    type: String,
+    label: 'Країна',
+    optional: true,
+    autoform: {
+      placeholder: 'Україна'
+    }
+  },
+  city: {
+    type: String,
+    label: 'Місто',
+    optional: true,
+    autoform: {
+      placeholder: 'Львів'
+    }
+  },
+  phone: {
+    type: String,
+    label: 'Телефон',
+    optional: true,
+    autoform: {
+      placeholder: '+380792375423'
+    }
+  },
+  skype: {
+    type: String,
+    label: 'Skype',
+    optional: true,
+    autoform: {
+      placeholder: 'skype_login'
+    }
+  }
+});
+
 Schema.UserProfile = new SimpleSchema({
   firstName: {
     type: String,
@@ -35,6 +70,16 @@ Schema.UserProfile = new SimpleSchema({
     autoform: {
       firstOption: "- Оберіть стать -"
     }
+  },
+  dateBorn: {
+    type: Date,
+    label: "Дата народження",
+    optional: true
+  },
+  contactInfo: {
+    type: Schema.UserProfileContact,
+    label: 'Контакна інформація',
+    optional: true
   }
 });
 
@@ -43,16 +88,6 @@ Schema.User = new SimpleSchema({
   profile: {
     type: Schema.UserProfile,
     label: 'Профіль'
-  },
-  password: {
-    type: String,
-    label: "Пароль",
-    optional: true,
-    autoform: {
-      type: "password",
-      autocomplete: false,
-      placeholder: "Пароль"
-    }
   }
 });
 

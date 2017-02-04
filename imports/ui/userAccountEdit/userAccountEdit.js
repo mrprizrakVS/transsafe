@@ -32,6 +32,9 @@ Template.userAccountEditLayout.events({
 
 
     let doc = insertDocument({}, e.target);
+    doc.profile.dateBorn = new Date(doc.profile.dateBorn);
+
+    console.log('doc', doc);
 
     check(doc, UsersProfileSchema);
 
