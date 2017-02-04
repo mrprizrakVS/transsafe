@@ -12,6 +12,8 @@ Template.userAccountEditLayout.onCreated(function() {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
     Meteor.subscribe('files.images.all');
   });
+
+  this.userRole = new ReactiveVar();
 });
 
 
@@ -20,7 +22,9 @@ Template.userAccountEditLayout.helpers({
   UsersProfileSchema,
   userDoc() {
     let user = User.findOne();
+
     user ? user.email = user.emails[0].address : null;
+    Template.instance().userRole.set(user.profile.role);
 
     return user;
   }
@@ -31,10 +35,12 @@ Template.userAccountEditLayout.events({
     e.preventDefault();
 
 
-    let doc = insertDocument({}, e.target);
+    let doc = insertDocument({
+      profile: {
+        role: template.userRole.get()
+      }
+    }, e.target);
     doc.profile.dateBorn = new Date(doc.profile.dateBorn);
-
-    console.log('doc', doc);
 
     check(doc, UsersProfileSchema);
 
