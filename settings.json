@@ -1,5 +1,6 @@
 {
   "public": {
-    "PHOTO_PATH": "http://localhost:3030/"
+    "PHOTO_PATH": "http://localhost:3030/",
+    "DEFAULT_PROFILE_PHOTO": "/home/vidia/assets/UserImages/default.png"
   }
 }
