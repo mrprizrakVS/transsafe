@@ -10,6 +10,7 @@ import '../imports/ui/sendVerify/sendVerify.js';
 import '../imports/ui/messageState/messageState.js';
 import '../imports/ui/userAccount/userAccount.js';
 import '../imports/ui/userAccountEdit/userAccountEdit.js';
+import '../imports/ui/serviceAccount/serviceAccount.js';
 
 import '../imports/config/accounts.config.js';
 
