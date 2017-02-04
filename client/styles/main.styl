@@ -183,7 +183,8 @@ body
 
 // User account profile
 
-.user-account-profile-wrap
+.user-account-profile-wrap,
+.service-account-wrapp
   display flex
 
 .user-a-profile-sidebar
@@ -195,8 +196,9 @@ body
   height auto
   border-radius 50%
 
-.u-profile-sect
+.profile-sect
   padding 4%
+  margin-bottom 5%
 
 .main-content-wrap-u-p
   flex 1
@@ -205,9 +207,6 @@ body
 .card-title-w-m
   padding 4%
   margin 0
-
-.u-profile-sect
-  margin-bottom 5%
 
 .profile-acts-btns
   display flex
@@ -239,3 +238,41 @@ body
   bottom 0
   left 0
   background-color $dark-gray
+
+.service-account-sidebar
+  width 25%
+  margin-left 2%
+
+.service-account-content
+  flex 1
+
+.service-m-photo-i-wrapp
+  padding 4%
+
+.service-main-photo
+  max-width 100%
+  height auto
+  display block
+
+.service-clients-list
+  list-style none
+  display flex
+  flex-wrap wrap
+  .service-clients-item
+    padding 4%
+    width 33.3333%
+    text-align center
+    cursor pointer
+    &:hover
+      .service-client-name
+        text-decoration underline
+
+.service-clients-item-img
+  img
+    max-width 100%
+    height auto
+
+.service-client-name
+  font-size 80%
+  text-decoration none
+  color $dark-gray

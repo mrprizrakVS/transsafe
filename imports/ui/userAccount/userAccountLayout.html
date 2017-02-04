@@ -3,14 +3,14 @@
     <aside class="user-a-profile-sidebar">
       <section class="user-a-profile-photo-wrap card-sect">
         <h3 class="card-sect-title user-profile-title">Профіль</h3>
-        <div class="card-inner-sect u-profile-sect">
+        <div class="card-inner-sect profile-sect">
           <img class="user-a-profile-photo" draggable="false" src="{{photoConvertor image.path}}" alt="">
         </div>
         {{#with currentUpload}}
         <div class="upload-progress" style="width: {{progress.get}}%" data-value="{{progress.get}}"></div>
         {{/with}}
       </section>
-      <section class="profile-acts-btns u-profile-sect card-sect">
+      <section class="profile-acts-btns profile-sect card-sect">
         <label for="uploadMainPhoto" class="profile-edit-btn upload-u-profile-photo btn-light-gray">
           <input id="uploadMainPhoto" type="file" />
           <i class="fa fa-camera" aria-hidden="true"></i>
@@ -22,12 +22,12 @@
           <i class="fa fa-bars" aria-hidden="true"></i>
         </a>
       </section>
-      <section class="profile-acts-btns u-profile-sect card-sect">
+      <section class="profile-acts-btns profile-sect card-sect">
         <a href="mailto:{{showEmail user}}" class="profile-edit-btn btn-light-gray">{{showEmail user}}</a>
       </section>
     </aside>
     <section class="main-content-wrap-u-p">
-      <h3 class="u-profile-sect profile-full-name card-sect">{{user.profile.firstName}} {{user.profile.lastName}}</h3>
+      <h3 class="profile-sect profile-full-name card-sect">{{user.profile.firstName}} {{user.profile.lastName}}</h3>
     </section>
   </section>
 </template>
