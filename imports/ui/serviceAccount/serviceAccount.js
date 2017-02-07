@@ -13,10 +13,21 @@ Template.serviceAccountLayout.onCreated(function() {
     Meteor.subscribe('files.images.all');
   });
   this.currentUpload = new ReactiveVar(false);
+  this.showInfo = new ReactiveVar(true);
 });
 
 Template.serviceAccountLayout.helpers({
   user() {
     return User.findOne();
+  },
+  showInfo() {
+    return Template.instance().showInfo.get();
   }
+});
+
+
+Template.serviceAccountLayout.events({
+  'click #toggle-service-info'(e, template) {
+      return template.showInfo.set(!template.showInfo.get());
+   }
 });
