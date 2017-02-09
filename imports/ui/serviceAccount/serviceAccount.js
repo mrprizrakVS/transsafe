@@ -20,6 +20,9 @@ Template.serviceAccountLayout.helpers({
   user() {
     return User.findOne();
   },
+  userEmail() {
+    return User.findOne().emails[0].address;
+  },
   showInfo() {
     return Template.instance().showInfo.get();
   }
