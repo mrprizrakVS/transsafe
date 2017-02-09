@@ -11,6 +11,7 @@ import '../imports/ui/messageState/messageState.js';
 import '../imports/ui/userAccount/userAccount.js';
 import '../imports/ui/userAccountEdit/userAccountEdit.js';
 import '../imports/ui/serviceAccount/serviceAccount.js';
+import '../imports/ui/serviceAccountEdit/serviceAccountEdit.js';
 
 import '../imports/config/accounts.config.js';
 
