@@ -9,6 +9,8 @@ Template.serviceAccountEditLayout.onCreated(function() {
   this.autorun(() => {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
   });
+
+  this.userRole = new ReactiveVar();
 });
 
 Template.serviceAccountEditLayout.helpers({
@@ -17,6 +19,7 @@ Template.serviceAccountEditLayout.helpers({
     let service = User.findOne();
 
     service ? service.email = service.emails[0].address : null;
+    Template.instance().userRole.set(service.profile.role);
 
     return service;
   }
