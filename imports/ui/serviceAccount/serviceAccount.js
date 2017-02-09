@@ -4,6 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { UserImages } from '../../api/images.js';
 
 import { User } from '../../api/user.js';
+import { Uploader } from '../../services/file_uploader.js';
 
 import './serviceAccountLayout.html';
 
@@ -20,6 +21,12 @@ Template.serviceAccountLayout.helpers({
   user() {
     return User.findOne();
   },
+  image() {
+    return UserImages.findOne({userId: FlowRouter.getParam('id')}, {
+      sort: { 'meta.date': -1 },
+      limit: 1
+    });
+  },
   userEmail() {
     return User.findOne().emails[0].address;
   },
@@ -32,5 +39,8 @@ Template.serviceAccountLayout.helpers({
 Template.serviceAccountLayout.events({
   'click #toggle-service-info'(e, template) {
       return template.showInfo.set(!template.showInfo.get());
+   },
+   'change #serviceUploadMainPhoto'(e, template) {
+      Uploader(e, template);
    }
 });
