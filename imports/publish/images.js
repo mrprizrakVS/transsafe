@@ -1,6 +1,10 @@
 import { Meteor } from 'meteor/meteor';
-import { UserImages } from '../api/images.js';
+import { ImagesCollections } from '../api/images.js';
 
-Meteor.publish('files.images.all', () => {
-  return UserImages.find().cursor;
+Meteor.publish('files.user.images.all', () => {
+  return ImagesCollections.UserImages.find().cursor;
+});
+
+Meteor.publish('files.service.images.all', () => {
+  return ImagesCollections.ServicesAdditionPhoto.find().cursor;
 });

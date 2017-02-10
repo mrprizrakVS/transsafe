@@ -1,3 +1,5 @@
+import '../imports/config/accounts.config.js';
+
 import '../imports/ui/body/body.js';
 import '../imports/ui/home/home.js';
 import '../imports/ui/main/main.js';
@@ -13,7 +15,7 @@ import '../imports/ui/userAccountEdit/userAccountEdit.js';
 import '../imports/ui/serviceAccount/serviceAccount.js';
 import '../imports/ui/serviceAccountEdit/serviceAccountEdit.js';
 
-import '../imports/config/accounts.config.js';
+import '../imports/components/addition_photos/addition_photos.js';
 
 import '../imports/helpers/message.js';
 import '../imports/helpers/showEmail.js';

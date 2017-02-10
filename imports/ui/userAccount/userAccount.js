@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { UserImages } from '../../api/images.js';
+import { ImagesCollections } from '../../api/images.js';
 
 import { User } from '../../api/user.js';
 import { Uploader } from '../../api/images.js';
@@ -11,7 +11,7 @@ import './userAccountLayout.html';
 Template.userAccountLayout.onCreated(function() {
   this.autorun(() => {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
-    Meteor.subscribe('files.images.all');
+    Meteor.subscribe('files.user.images.all');
   });
   this.currentUpload = new ReactiveVar(false);
 });
@@ -21,7 +21,7 @@ Template.userAccountLayout.helpers({
     return User.findOne();
   },
   image() {
-    return UserImages.findOne({userId: FlowRouter.getParam('id')}, {
+    return ImagesCollections.UserImages.findOne({userId: FlowRouter.getParam('id')}, {
       sort: { 'meta.date': -1 },
       limit: 1
     });

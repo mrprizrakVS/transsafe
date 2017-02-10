@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { UserImages } from '../../api/images.js';
+import { ImagesCollections } from '../../api/images.js';
 
 import { User } from '../../api/user.js';
 import { Uploader } from '../../services/file_uploader.js';
@@ -22,7 +22,7 @@ Template.serviceAccountLayout.helpers({
     return User.findOne();
   },
   image() {
-    return UserImages.findOne({userId: FlowRouter.getParam('id')}, {
+    return ImagesCollections.UserImages.findOne({userId: FlowRouter.getParam('id')}, {
       sort: { 'meta.date': -1 },
       limit: 1
     });

@@ -283,7 +283,7 @@ body
   text-decoration none
   color $dark-gray
 
-.service-main-container
+.service-container
   padding 2%
   margin-bottom 2%
 
@@ -328,3 +328,22 @@ body
     height 100px
     padding 5px
     resize none
+
+.addition-photos
+  display flex
+  > *
+    flex 1
+    img
+      width 100%
+      height auto
+    &:not(:first-child)
+      margin-left 2%
+
+.load-addition-photo-service
+  font-size 200%
+  background-color $light-gray
+  border-radius 3px
+  display flex
+  align-items center
+  justify-content center
+  cursor pointer

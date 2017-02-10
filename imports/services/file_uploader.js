@@ -1,14 +1,16 @@
-import { UserImages } from '../api/images.js';
+import { ImagesCollections } from '../api/images.js';
 
-const Uploader = (e, template) => {
+const Uploader = (e, template, collectionName = 'UserImages', inputMetaData = {}) => {
+  let meta = Object.assign({
+    date: new Date()
+  }, inputMetaData);
+
   if (e.currentTarget.files && e.currentTarget.files[0]) {
-    let upload = UserImages.insert({
+    let upload = ImagesCollections[collectionName].insert({
       file: e.currentTarget.files[0],
       streams: 'dynamic',
       chunkSize: 'dynamic',
-      meta: {
-        date: new Date()
-      }
+      meta
     }, false);
 
     upload.on('start', function() {
