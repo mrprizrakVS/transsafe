@@ -1,0 +1,13 @@
+<template name="AdditionPhotosLayout">
+  <section class="addition-photos">
+    {{#each additionHelpers}}
+      <div class="ser-addition-photo-wrap">
+        <img draggable="false" src="{{photoConvertor path}}" alt="">
+      </div>
+    {{/each}}
+    <input class="none" type="file" id="serviceUploadAdditionPhoto">
+    <label for="serviceUploadAdditionPhoto" class="load-addition-photo-service">
+      <i class="fa fa-plus"></i>
+    </label>
+  </section>
+</template>
