@@ -25,3 +25,26 @@ Template.serviceAccountEditLayout.helpers({
   }
 });
 
+Template.serviceAccountEditLayout.events({
+  'submit #editBasisServiceForm'(e, template) {
+    e.preventDefault();
+
+
+    let doc = insertDocument({
+      profile: {
+        role: template.userRole.get()
+      }
+    }, e.target);
+
+    check(doc, ServiceProfileSchema);
+
+    Meteor.call('upsertUser', doc, (err, response) => {
+      if(err) {
+        return alert('При збереженні виникла помилка');
+      }
+
+      return alert('Зміни збережено');
+    });
+  }
+});
+

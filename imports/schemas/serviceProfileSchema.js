@@ -10,6 +10,7 @@ Schema.contactInfo = new SimpleSchema({
   contactPerson: {
     type: String,
     label: "Контактна особа",
+    optional: true,
     autoform: {
       placeholder: "Василь",
       autocomplete: false
@@ -55,6 +56,15 @@ Schema.generalInfo = new SimpleSchema({
     label: "Телефон",
     autoform: {
       placeholder: "Номер"
+    }
+  },
+  description: {
+    type: String,
+    optional: true,
+    label: "Про компанію",
+    autoform: {
+      type: "textarea",
+      placeholder: "Компанія..."
     }
   },
   numberOfWorker: {
@@ -109,15 +119,6 @@ Schema.ServiceSchema = new SimpleSchema({
     autoform: {
       type: "hidden"
     }
-  },
-  password: {
-    type: String,
-    label: "Пароль",
-    autoform: {
-       type: "password",
-       autocomplete: false,
-       placeholder: "Пароль"
-     }
   }
 });
 
