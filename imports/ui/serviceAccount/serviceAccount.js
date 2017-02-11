@@ -11,7 +11,7 @@ import './serviceAccountLayout.html';
 Template.serviceAccountLayout.onCreated(function() {
   this.autorun(() => {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
-    Meteor.subscribe('files.images.all');
+    Meteor.subscribe('files.user.images.all');
   });
   this.currentUpload = new ReactiveVar(false);
   this.showInfo = new ReactiveVar(true);
