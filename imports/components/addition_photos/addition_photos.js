@@ -7,6 +7,10 @@ import { ImagesCollections } from '../../api/images.js';
 
 import './addition_photos.html';
 
+Template.AdditionPhotosLayout.onRendered(() => {
+  $('.swipebox').swipebox();
+});
+
 Template.AdditionPhotosLayout.onCreated(function() {
   this.autorun(() => {
     Meteor.subscribe('files.service.images.all');
@@ -15,9 +19,12 @@ Template.AdditionPhotosLayout.onCreated(function() {
 });
 
 Template.AdditionPhotosLayout.helpers({
-  additionHelpers() {
+  overviewImages() {
     return ImagesCollections.ServicesAdditionPhoto.find({
       userId: FlowRouter.getParam('id')
+    }, {
+      sort: { 'meta.date': -1 },
+      limit: 4
     });
   }
 });

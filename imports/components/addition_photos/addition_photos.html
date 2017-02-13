@@ -1,9 +1,9 @@
 <template name="AdditionPhotosLayout">
   <section class="addition-photos">
-    {{#each additionHelpers}}
-      <div class="ser-addition-photo-wrap">
+    {{#each overviewImages}}
+      <a href="{{photoConvertor path}}" target="_blank" class="swipebox ser-addition-photo-wrap">
         <img draggable="false" src="{{photoConvertor path}}" alt="">
-      </div>
+      </a>
     {{/each}}
     <input class="none" type="file" id="serviceUploadAdditionPhoto">
     <label for="serviceUploadAdditionPhoto" class="load-addition-photo-service">
