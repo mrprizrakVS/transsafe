@@ -32,6 +32,9 @@ Template.serviceAccountLayout.helpers({
   },
   showInfo() {
     return Template.instance().showInfo.get();
+  },
+  currentUpload() {
+    return Template.instance().currentUpload.get();
   }
 });
 
