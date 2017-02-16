@@ -15,8 +15,6 @@ import '../imports/ui/userAccountEdit/userAccountEdit.js';
 import '../imports/ui/serviceAccount/serviceAccount.js';
 import '../imports/ui/serviceAccountEdit/serviceAccountEdit.js';
 
-import '../imports/components/addition_photos/addition_photos.js';
-
 import '../imports/helpers/message.js';
 import '../imports/helpers/showEmail.js';
 import '../imports/helpers/photoConvertor.js';

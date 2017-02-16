@@ -7,6 +7,7 @@ import { User } from '../../api/user.js';
 import { Uploader } from '../../api/images.js';
 
 import './userAccountLayout.html';
+import '../../components/addition_photos/addition_photos.js';
 
 Template.userAccountLayout.onCreated(function() {
   this.autorun(() => {

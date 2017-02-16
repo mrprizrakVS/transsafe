@@ -7,6 +7,7 @@ import { User } from '../../api/user.js';
 import { Uploader } from '../../services/file_uploader.js';
 
 import './serviceAccountLayout.html';
+import '../../components/addition_photos/addition_photos.js';
 
 Template.serviceAccountLayout.onCreated(function() {
   this.autorun(() => {
