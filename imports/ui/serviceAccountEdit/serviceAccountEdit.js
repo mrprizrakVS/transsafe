@@ -4,6 +4,7 @@ import { ServiceProfileSchema } from '../../schemas/serviceProfileSchema.js';
 import { User } from '../../api/user.js';
 
 import './serviceAccountEditLayout.html';
+import '../../components/change_password/change_password.js';
 
 Template.serviceAccountEditLayout.onCreated(function() {
   this.autorun(() => {
@@ -18,10 +19,13 @@ Template.serviceAccountEditLayout.helpers({
   serviceDoc() {
     let service = User.findOne();
 
-    service ? service.email = service.emails[0].address : null;
-    Template.instance().userRole.set(service.profile.role);
+    if(service) {
+      service.email = service.emails[0].address;
+      Template.instance().userRole.set(service.profile.role);
 
-    return service;
+      return service;
+    }
+
   }
 });
 
