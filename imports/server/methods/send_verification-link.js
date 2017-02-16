@@ -1,4 +1,6 @@
-import { User } from '../../imports/api/user.js';
+import { User } from '../../api/user.js';
+
+import { Meteor } from 'meteor/meteor';
 
 Meteor.methods({
   sendVerificationLink(userId = Meteor.userId()) {
