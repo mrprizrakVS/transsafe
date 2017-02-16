@@ -29,7 +29,11 @@ Template.serviceAccountLayout.helpers({
     });
   },
   userEmail() {
-    return User.findOne().emails[0].address;
+    let user = User.findOne();
+
+    if(user) {
+      return user.emails[0].address;
+    }
   },
   showInfo() {
     return Template.instance().showInfo.get();
