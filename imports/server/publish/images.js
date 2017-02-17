@@ -8,3 +8,7 @@ Meteor.publish('files.user.images.all', () => {
 Meteor.publish('files.service.images.all', () => {
   return ImagesCollections.ServicesAdditionPhoto.find().cursor;
 });
+
+Meteor.publish('files.service.banner.images.all', () => {
+  return ImagesCollections.ServicesBannerPhoto.find().cursor;
+});

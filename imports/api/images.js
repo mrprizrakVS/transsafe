@@ -28,4 +28,18 @@ ImagesCollections.ServicesAdditionPhoto = new FilesCollection({
   }
 });
 
+ImagesCollections.ServicesBannerPhoto = new FilesCollection({
+  collectionName: 'ServicesBannerPhoto',
+  allowClientCode: false,
+  storagePath: `/home/vidia/assets/ServicesBannerPhoto`,
+  onBeforeUpload(file) {
+    if(file.size <= 10485760 && /png|jpg|jpeg/i.test(file.extension)) {
+      return true;
+    } else {
+      return 'Будь ласка, завантажте зображення з розміром до 10МБ';
+    }
+  }
+});
+
+
 export { ImagesCollections }

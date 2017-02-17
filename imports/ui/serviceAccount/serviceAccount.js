@@ -8,7 +8,6 @@ import { News } from '../../api/news.js';
 import { Uploader } from '../../services/file_uploader.js';
 import { NewsSchema } from '../../schemas/newsSchema.js';
 
-
 import './serviceAccountLayout.html';
 import '../../components/addition_photos/addition_photos.js';
 import '../../components/news_item/news_item.js';
@@ -18,6 +17,7 @@ Template.serviceAccountLayout.onCreated(function() {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
     Meteor.subscribe('files.user.images.all');
     Meteor.subscribe('news.user', FlowRouter.getParam('id'));
+    Meteor.subscribe('files.service.banner.images.all');
   });
   this.currentUpload = new ReactiveVar(false);
   this.showInfo = new ReactiveVar(true);
@@ -39,6 +39,12 @@ Template.serviceAccountLayout.helpers({
     if(user) {
       return user.emails[0].address;
     }
+  },
+  bannerPhoto() {
+    return ImagesCollections.ServicesBannerPhoto.findOne({}, {
+      sort: { 'meta.date': -1 },
+      limit: 1
+    });
   },
   showInfo() {
     return Template.instance().showInfo.get();
@@ -80,6 +86,8 @@ Template.serviceAccountLayout.events({
         title.value = '';
         content.value = '';
       });
-
+   },
+   'change #upload-banner'(e, template) {
+      Uploader(e, template, 'ServicesBannerPhoto', {isBanner: true});
    }
 });
