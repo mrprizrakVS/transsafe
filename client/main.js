@@ -14,6 +14,7 @@ import '../imports/ui/userAccount/userAccount.js';
 import '../imports/ui/userAccountEdit/userAccountEdit.js';
 import '../imports/ui/serviceAccount/serviceAccount.js';
 import '../imports/ui/serviceAccountEdit/serviceAccountEdit.js';
+import '../imports/ui/serviceAccountPhotos/serviceAccountPhotos.js';
 
 import '../imports/helpers/message.js';
 import '../imports/helpers/showEmail.js';
