@@ -1,3 +1,9 @@
 import { Mongo } from 'meteor/mongo';
 
-export const UserCars = new Mongo.Collection('userCars');
+import { UserCarsSchema } from '../schemas/userCarsSchema.js';
+
+const UserCars = new Mongo.Collection('userCars');
+UserCars.attachSchema(UserCarsSchema);
+
+
+export { UserCars };
