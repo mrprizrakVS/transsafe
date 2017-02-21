@@ -12,7 +12,7 @@ import '../../components/addition_photos/addition_photos.js';
 Template.userAccountLayout.onCreated(function() {
   this.autorun(() => {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
-    Meteor.subscribe('files.user.images.all');
+    Meteor.subscribe('files.user.images.all', FlowRouter.getParam('id'));
   });
   this.currentUpload = new ReactiveVar(false);
 });

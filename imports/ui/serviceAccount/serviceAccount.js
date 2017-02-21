@@ -15,9 +15,9 @@ import '../../components/news_item/news_item.js';
 Template.serviceAccountLayout.onCreated(function() {
   this.autorun(() => {
     Meteor.subscribe('user', FlowRouter.getParam('id'));
-    Meteor.subscribe('files.user.images.all');
+    Meteor.subscribe('files.user.images.all', FlowRouter.getParam('id'));
     Meteor.subscribe('news.user', FlowRouter.getParam('id'));
-    Meteor.subscribe('files.service.banner.images.all');
+    Meteor.subscribe('files.service.banner.images.all', FlowRouter.getParam('id'));
   });
   this.currentUpload = new ReactiveVar(false);
   this.showInfo = new ReactiveVar(true);

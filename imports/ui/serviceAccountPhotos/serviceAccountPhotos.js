@@ -11,7 +11,7 @@ Template.serviceAccountPhotosLayout.onRendered(() => {
 
 Template.serviceAccountPhotosLayout.onCreated(function() {
   this.autorun(() => {
-    Meteor.subscribe('files.service.images.all');
+    Meteor.subscribe('files.service.images.all', FlowRouter.getParam('id'));
   });
 });
 

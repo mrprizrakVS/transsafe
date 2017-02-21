@@ -13,7 +13,7 @@ Template.AdditionPhotosLayout.onRendered(() => {
 
 Template.AdditionPhotosLayout.onCreated(function() {
   this.autorun(() => {
-    Meteor.subscribe('files.service.images.all');
+    Meteor.subscribe('files.service.images.all', FlowRouter.getParam('id'));
   });
   this.currentUpload = new ReactiveVar(false);
 });
