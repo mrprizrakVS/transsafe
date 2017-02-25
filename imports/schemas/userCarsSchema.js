@@ -49,6 +49,22 @@ Schema.Wheels = new SimpleSchema({
 });
 
 Schema.Car = new SimpleSchema({
+  createdAt: {
+    type: Date,
+    autoValue() {
+      return new Date();
+    },
+    autoform: {
+      type: 'hidden'
+    }
+  },
+  ownerId: {
+    type: String,
+    label: "Власник",
+    autoform: {
+      type: 'hidden'
+    }
+  },
   model: {
     type: Schema.Model,
     label: "Модель"
