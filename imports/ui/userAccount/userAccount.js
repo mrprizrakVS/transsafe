@@ -30,6 +30,9 @@ Template.userAccountLayout.helpers({
       limit: 1
     });
   },
+  subscriberLength() {
+    return User.findOne({_id: FlowRouter.getParam('id')}).profile.subscribeServices.length;
+  },
   news() {
     console.log(News.find().fetch());
     return News.find();

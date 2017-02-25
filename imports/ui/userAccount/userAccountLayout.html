@@ -30,7 +30,10 @@
       <h3 class="profile-sect profile-full-name card-sect">{{user.profile.firstName}} {{user.profile.lastName}}</h3>
       <section class="card-sect">
         <div class="card-inner-sect empty-title">
-          <h3 class="service-article-title minor-title service-meta-info-title">Підписки на новини</h3>
+          <header class="news-card-user-header">
+            <h3 class="minor-title user-meta-info-title">Підписки на новини</h3>
+            <span class="news-subscriber-length">Підписок: {{subscriberLength}}</span>
+          </header>
           {{#each news}}
             {{> NewsItemLayout}}
           {{/each}}
