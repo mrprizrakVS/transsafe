@@ -61,6 +61,9 @@ Schema.Car = new SimpleSchema({
   ownerId: {
     type: String,
     label: "Власник",
+    autoValue() {
+      return Meteor.userId();
+    },
     autoform: {
       type: 'hidden'
     }

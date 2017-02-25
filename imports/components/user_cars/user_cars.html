@@ -1,3 +1,27 @@
 <template name="userCar">
-  <h3>car</h3>
+  <article class="user-car-item">
+    <div class="car-item-acts-btn">
+      <button id="edit-trigger" class="car-item-btn car-edit-trigger">
+        <i class="fa {{#if updateMode}}fa-eye{{else}}fa-pencil{{/if}}"></i>
+      </button>
+      <button id="remove-car" class="car-item-btn"><i class="fa fa-trash"></i></button>
+    </div>
+    {{#if updateMode}}
+      {{> quickForm buttonContent="Зберегти" collection="UserCars" id="updateUserCar" doc=this type="update"}}
+    {{else}}
+      <header>
+        <h4>Модель: {{model.brand}} {{model.model}}</h4>
+      </header>
+      <section class="user-car-i-cnt">
+        <dl class="inform-car-item">
+          <dt>Рік:</dt>
+          <dd>{{moFormat model.years 'YYYY'}}</dd>
+          <dt>Розмір покришки:</dt>
+          <dd>{{wheels.size}}</dd>
+          <dt>Матеріал покришки:</dt>
+          <dd>{{wheels.material}}</dd>
+        </dl>
+      </section>
+    {{/if}}
+  </article>
 </template>

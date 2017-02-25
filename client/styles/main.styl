@@ -154,6 +154,9 @@ body
 
 .card-inner-sect
   padding 0 2% 2% 2%
+  margin-bottom 2%
+  &.empty-title
+    padding-top 2%
 
 .u-profile-edit-sect
   padding 2%
@@ -316,7 +319,8 @@ body
   display flex
   align-items flex-start
 
-.inform-service-list
+.inform-service-list,
+.inform-car-item
   display flex
   flex-wrap wrap
   dt, dd
@@ -328,8 +332,8 @@ body
   .form-input
     display block
     width 100%
-    margin-bottom 2%
     height 35px
+    margin-bottom 2%
     border-radius 3px
     border 2px solid $gray
     padding 0 5px
@@ -370,14 +374,14 @@ body
 
 .update-service-banner-btn
   position absolute
-  cursor pointer
+  padding 10px
   right 0
   top 0
+  font-size 150%
   background-color $green
   color $white
   border none
-  padding 10px
-  font-size 150%
+  cursor pointer
 
 .service-gallery-wrapp
   display flex
@@ -388,8 +392,34 @@ body
 
 .user-cars-list-title
   display flex
-  justify-content space-between
   padding 2% 0
+  justify-content space-between
   border-bottom thin solid $gray
   h3
     margin 1% 0
+
+.empty-cars-list-title
+  display block
+  font-size 170%
+  text-align center
+
+.inform-car-item
+  dt, dd
+    border-bottom thin solid $gray
+    padding 0.2% 0
+
+.user-car-item
+  position relative
+
+.car-item-btn
+  padding 7px
+  color $dark
+  background-color $gray
+  border none
+  border-radius 3px
+  outline none
+
+.car-item-acts-btn
+  position absolute
+  top 0
+  right 0

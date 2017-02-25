@@ -1,0 +1,21 @@
+<template name="userAccountCarsLayout">
+  <div class="card-sect">
+    <div class="card-inner-sect">
+      <div class="user-cars-list-title">
+        <h3>Автомобілі</h3>
+        <!-- <button class="btn btn-primary">Добавити</button> -->
+      </div>
+      {{> quickForm buttonContent="Зберегти" collection="UserCars" id="insertUserCar" type="insert"}}
+    </div>
+  </div>
+  <section class="user-cars-wrapp card-sect">
+    <div class="card-inner-sect empty-title">
+      {{#each cars}}
+        {{> userCar}}
+      {{else}}
+        <span class="empty-cars-list-title">У вас немає машин</span>
+      {{/each}}
+    </div>
+  </section>
+  
+</template>
