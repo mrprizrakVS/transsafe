@@ -76,7 +76,7 @@ Template.serviceAccountLayout.events({
       let title = e.target.title,
           content = e.target.content;
 
-      Meteor.call('addNews', {title: title.value, content: title.content}, (err, data) => {
+      Meteor.call('addNews', {title: title.value, content: content.value}, (err, data) => {
         if(err) {
           console.warn('Create post', err);
 
