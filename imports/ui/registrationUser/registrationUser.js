@@ -21,6 +21,7 @@ Template.registrationUserLayout.events({
     let doc = insertDocument({}, e.target);
 
     doc.profile.role = 'user';
+    doc.subscribeServices = [];
 
     check(doc, UsersSchema);
 

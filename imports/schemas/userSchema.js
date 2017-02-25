@@ -51,6 +51,18 @@ Schema.User = new SimpleSchema({
       placeholder: 'example@gmail.com'
     }
   },
+  subscribeServices: {
+    type: Array,
+    autoValue() {
+      return [];
+    },
+    autoform: {
+      type: 'hidden'
+    }
+  },
+  'subscribeServices.$': {
+    type: String
+  },
   createdAt: {
     type: Date,
     optional: true,

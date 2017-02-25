@@ -4,7 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { ImagesCollections } from '../../api/images.js';
 
 import { User } from '../../api/user.js';
-import { Uploader } from '../../api/images.js';
+import { Uploader } from '../../services/file_uploader.js';
 
 import './userAccountLayout.html';
 import '../../components/addition_photos/addition_photos.js';

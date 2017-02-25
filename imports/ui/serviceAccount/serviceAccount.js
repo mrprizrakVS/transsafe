@@ -89,5 +89,13 @@ Template.serviceAccountLayout.events({
    },
    'change #upload-banner'(e, template) {
       Uploader(e, template, 'ServicesBannerPhoto', {isBanner: true});
+   },
+   'click #subscribeService'(e, template) {
+      e.preventDefault();
+
+      console.log('cliiiick');
+
+
+      Meteor.call('subscribeService', FlowRouter.getParam('id'));
    }
 });
