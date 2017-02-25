@@ -14,6 +14,15 @@ Schema.newsSchema = new SimpleSchema({
       placeholder: 'Заголовок'
     }
   },
+  authorName: {
+    type: String,
+    autoValue() {
+      return Meteor.user().profile.generalInfo.name
+    },
+    autoform: {
+      type: 'hidden'
+    }
+  },
   content: {
     type: String,
     autoform: {

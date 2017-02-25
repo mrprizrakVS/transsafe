@@ -1,6 +1,12 @@
 <template name="NewsItemLayout">
   <article class="service-news-item">
-    <h4>{{title}}</h4>
+    <header class="post-meta-data">
+      <h4>{{title}}</h4>
+      <div class="post-info">
+        <a href="/service/profile/{{authourId}}" class="post-author-name">{{authorName}}</a>
+        <time>{{moFormat createdAt 'YYYY-MM-DD'}}</time>
+      </div>
+    </header>
     <div class="content-service-artcl">
       <p>{{content}}</p>
     </div>

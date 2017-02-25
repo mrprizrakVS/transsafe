@@ -25,7 +25,7 @@ Template.serviceAccountLayout.onCreated(function() {
 
 Template.serviceAccountLayout.helpers({
   user() {
-    return User.findOne();
+    return User.findOne({_id: FlowRouter.getParam('id')});
   },
   image() {
     return ImagesCollections.UserImages.findOne({userId: FlowRouter.getParam('id')}, {
@@ -76,7 +76,11 @@ Template.serviceAccountLayout.events({
       let title = e.target.title,
           content = e.target.content;
 
-      Meteor.call('addNews', {title: title.value, content: content.value}, (err, data) => {
+      Meteor.call('addNews', {
+        title: title.value,
+        content: content.value,
+        authorName: User.findOne({_id: FlowRouter.getParam('id')}).profile.generalInfo.name
+      }, (err, data) => {
         if(err) {
           console.warn('Create post', err);
 
@@ -93,9 +97,6 @@ Template.serviceAccountLayout.events({
    'click #subscribeService'(e, template) {
       e.preventDefault();
 
-      console.log('cliiiick');
-
-
-      Meteor.call('subscribeService', FlowRouter.getParam('id'));
+      Meteor.call('subscribeService', FlowRouter.getParam('id'), Meteor.userId());
    }
 });
