@@ -14,6 +14,7 @@ Template.userAccountEditLayout.onCreated(function() {
   });
 
   this.userRole = new ReactiveVar();
+  this.subscribeServices = new ReactiveVar();
 });
 
 
@@ -25,6 +26,7 @@ Template.userAccountEditLayout.helpers({
 
     user ? user.email = user.emails[0].address : null;
     Template.instance().userRole.set(user.profile.role);
+    Template.instance().subscribeServices.set(user.profile.subscribeServices || []);
 
     return user;
   }
@@ -37,7 +39,8 @@ Template.userAccountEditLayout.events({
 
     let doc = insertDocument({
       profile: {
-        role: template.userRole.get()
+        role: template.userRole.get(),
+        subscribeServices: template.subscribeServices.get()
       }
     }, e.target);
     doc.profile.dateBorn = new Date(doc.profile.dateBorn);

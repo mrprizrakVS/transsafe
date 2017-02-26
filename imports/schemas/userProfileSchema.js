@@ -63,6 +63,18 @@ Schema.UserProfile = new SimpleSchema({
       type: 'hidden'
     }
   },
+  subscribeServices: {
+    type: Array,
+    autoValue() {
+      return [];
+    },
+    autoform: {
+      type: 'hidden'
+    }
+  },
+  'subscribeServices.$': {
+    type: String
+  },
   gender: {
     type: String,
     allowedValues: ['Чоловік', 'Жінка'],

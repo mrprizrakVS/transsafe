@@ -34,7 +34,6 @@ Template.userAccountLayout.helpers({
     return User.findOne({_id: FlowRouter.getParam('id')}).profile.subscribeServices.length;
   },
   news() {
-    console.log(News.find().fetch());
     return News.find();
   },
   currentUpload() {
