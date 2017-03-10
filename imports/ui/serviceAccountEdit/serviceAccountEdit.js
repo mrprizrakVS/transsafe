@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 
 import { ServiceProfileSchema } from '../../schemas/serviceProfileSchema.js';
+import { PriceListSchema } from '../../schemas/servicePriceListSchema.js';
 import { User } from '../../api/user.js';
 
 import './serviceAccountEditLayout.html';
@@ -16,6 +17,7 @@ Template.serviceAccountEditLayout.onCreated(function() {
 
 Template.serviceAccountEditLayout.helpers({
   ServiceProfileSchema,
+  PriceListSchema,
   serviceDoc() {
     let service = User.findOne();
 
@@ -30,6 +32,21 @@ Template.serviceAccountEditLayout.helpers({
 });
 
 Template.serviceAccountEditLayout.events({
+  'submit #editPriceListServiceForm'(e, template) {
+    e.preventDefault();
+
+
+    let objDoc = insertDocument({}, e.target),
+        doc = Object.values(objDoc.priceList);
+
+    Meteor.call('upsertUser', {priceList: doc}, (err, response) => {
+      if(err) {
+        return alert('При збереженні виникла помилка');
+      }
+
+      return alert('Зміни збережено');
+    });
+  },
   'submit #editBasisServiceForm'(e, template) {
     e.preventDefault();
 
